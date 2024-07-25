@@ -133,4 +133,21 @@ def load_image(self):
         
         # Show a confirmation message
         messagebox.showinfo("Success", "Flight information saved successfully")
+
+        def open_dashboard_page(self):
+        self.root.destroy()
+        import dashboard
+
+    def login_page(self):
+        self.root.destroy()
+        import login
+
+    def __del__(self):
+        if hasattr(self, 'conn'):
+            self.conn.close()
+
+# Create the main window
+root = tk.Tk()
+app = AddFlightPage(root)
+root.mainloop()
     
